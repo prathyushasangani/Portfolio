@@ -427,6 +427,16 @@ h3 {
   padding: 26px;
 }
 
+.project-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 1px solid #dce5ef;
+  border-radius: 8px;
+  background: #13231f;
+  object-fit: cover;
+}
+
 .project-type {
   margin: 0 0 12px;
   color: var(--teal);
