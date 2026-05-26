@@ -11,12 +11,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     >
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
+    <div class="bg-fx" aria-hidden="true"></div>
+    <span class="orb a" aria-hidden="true"></span>
+    <span class="orb b" aria-hidden="true"></span>
+    <span class="orb c" aria-hidden="true"></span>
+    <div class="cursor-glow" aria-hidden="true"></div>
+
     <header class="site-header">
       <a class="brand" href="#home" aria-label="Prathyusha Sangani home">
         <span class="brand-mark">PS</span>
@@ -33,15 +39,15 @@
 
     <main id="home">
       <section class="hero section-band">
-        <div class="hero-content">
+        <div class="hero-content reveal">
           <p class="eyebrow">Software Professional</p>
-          <h1>Building websites, RAG applications, AI bots, and practical digital products.</h1>
+          <h1>Building <span class="gradient-text">interactive</span> websites, <span class="gradient-text">RAG</span> applications, and intelligent <span class="gradient-text">AI</span> products.</h1>
           <p class="hero-copy">
             I design and develop reliable web experiences, intelligent document systems, workflow automations,
             and custom bots that help teams move faster with cleaner software.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="#contact">Start a Project</a>
+            <a class="button primary" href="#contact">Start a Project →</a>
             <a class="button secondary" href="#work">View Work Areas</a>
           </div>
           <dl class="stats" aria-label="Professional focus">
@@ -60,8 +66,8 @@
           </dl>
         </div>
 
-        <div class="hero-visual" aria-label="Developer workspace preview">
-          <div class="visual-shell">
+        <div class="hero-visual reveal" aria-label="Developer workspace preview">
+          <div class="visual-shell tilt" data-tilt>
             <div class="visual-topbar">
               <span></span>
               <span></span>
@@ -93,27 +99,27 @@
       </section>
 
       <section id="services" class="section">
-        <div class="section-heading">
+        <div class="section-heading reveal">
           <p class="eyebrow">What I Build</p>
-          <h2>End-to-end software for real workflows.</h2>
+          <h2>End-to-end software for <span class="gradient-text">real workflows</span>.</h2>
         </div>
         <div class="service-grid">
-          <article>
+          <article class="tilt reveal" data-tilt>
             <span class="service-icon">01</span>
             <h3>Websites and Web Apps</h3>
             <p>Modern responsive websites, dashboards, admin panels, landing pages, and product interfaces.</p>
           </article>
-          <article>
+          <article class="tilt reveal" data-tilt>
             <span class="service-icon">02</span>
             <h3>RAG Applications</h3>
             <p>Document chat, knowledge assistants, semantic search, embeddings, vector databases, and grounded answers.</p>
           </article>
-          <article>
+          <article class="tilt reveal" data-tilt>
             <span class="service-icon">03</span>
             <h3>Bots and Automations</h3>
             <p>Chatbots, support bots, internal workflow bots, API automations, and task orchestration systems.</p>
           </article>
-          <article>
+          <article class="tilt reveal" data-tilt>
             <span class="service-icon">04</span>
             <h3>Backend Integrations</h3>
             <p>REST APIs, database design, authentication, third-party integrations, deployment, and maintenance.</p>
@@ -122,30 +128,30 @@
       </section>
 
       <section id="skills" class="section skills-section">
-        <div class="section-heading">
+        <div class="section-heading reveal">
           <p class="eyebrow">Skills</p>
-          <h2>A practical toolkit across frontend, backend, AI, and cloud.</h2>
+          <h2>A practical toolkit across <span class="gradient-text">frontend, backend, AI, and cloud</span>.</h2>
         </div>
         <div class="skills-layout">
-          <div class="skill-panel">
+          <div class="skill-panel tilt reveal" data-tilt>
             <h3>Frontend</h3>
             <div class="skill-tags">
               <span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span><span>Next.js</span><span>Responsive UI</span>
             </div>
           </div>
-          <div class="skill-panel">
+          <div class="skill-panel tilt reveal" data-tilt>
             <h3>Backend</h3>
             <div class="skill-tags">
               <span>Node.js</span><span>Express</span><span>Python</span><span>REST APIs</span><span>Authentication</span><span>Databases</span>
             </div>
           </div>
-          <div class="skill-panel">
+          <div class="skill-panel tilt reveal" data-tilt>
             <h3>AI and RAG</h3>
             <div class="skill-tags">
               <span>LLM Apps</span><span>Prompting</span><span>Embeddings</span><span>Vector Search</span><span>LangChain</span><span>Chatbots</span>
             </div>
           </div>
-          <div class="skill-panel">
+          <div class="skill-panel tilt reveal" data-tilt>
             <h3>Delivery</h3>
             <div class="skill-tags">
               <span>Git</span><span>GitHub</span><span>Cloud Deployments</span><span>CI/CD</span><span>Testing</span><span>Documentation</span>
@@ -155,22 +161,22 @@
       </section>
 
       <section id="work" class="section">
-        <div class="section-heading">
+        <div class="section-heading reveal">
           <p class="eyebrow">Work Areas</p>
-          <h2>Clear outcomes from idea to launch.</h2>
+          <h2>Clear outcomes from <span class="gradient-text">idea to launch</span>.</h2>
         </div>
         <div class="timeline">
-          <article>
+          <article class="tilt reveal" data-tilt>
             <span>Discover</span>
             <h3>Understand the workflow</h3>
             <p>Map user needs, data sources, existing tools, and the fastest useful version to ship.</p>
           </article>
-          <article>
+          <article class="tilt reveal" data-tilt>
             <span>Develop</span>
             <h3>Build the product</h3>
             <p>Create the frontend, backend, AI flow, integrations, and reliable deployment path.</p>
           </article>
-          <article>
+          <article class="tilt reveal" data-tilt>
             <span>Improve</span>
             <h3>Measure and refine</h3>
             <p>Improve speed, usability, answer quality, security, and maintainability after release.</p>
@@ -179,12 +185,12 @@
       </section>
 
       <section id="projects" class="section projects-section">
-        <div class="section-heading">
+        <div class="section-heading reveal">
           <p class="eyebrow">Projects</p>
-          <h2>Featured builds from my GitHub.</h2>
+          <h2>Featured builds from my <span class="gradient-text">GitHub</span>.</h2>
         </div>
         <div class="project-grid">
-          <article class="project-card">
+          <article class="project-card tilt reveal" data-tilt>
             <video class="project-video" controls muted playsinline preload="metadata" aria-label="Demo video explaining how local-rag works">
               <source src="assets/local-rag-demo.webm" type="video/webm">
               Your browser does not support the video tag.
@@ -208,27 +214,27 @@
               <span>Local AI</span>
             </div>
             <a class="project-link" href="https://github.com/prathyushasangani/local-rag" target="_blank" rel="noreferrer">
-              View on GitHub
+              View on GitHub →
             </a>
           </article>
         </div>
       </section>
 
       <section id="blog" class="section insight-section">
-        <div class="section-heading">
+        <div class="section-heading reveal">
           <p class="eyebrow">Blog Notes</p>
-          <h2>Topics I like working on.</h2>
+          <h2>Topics I like <span class="gradient-text">working on</span>.</h2>
         </div>
         <div class="insight-grid">
-          <article>
+          <article class="tilt reveal" data-tilt>
             <p>AI Engineering</p>
             <h3>How RAG helps teams search private knowledge without guessing.</h3>
           </article>
-          <article>
+          <article class="tilt reveal" data-tilt>
             <p>Web Development</p>
             <h3>Why simple interfaces often make the strongest business tools.</h3>
           </article>
-          <article>
+          <article class="tilt reveal" data-tilt>
             <p>Automation</p>
             <h3>Turning repeated manual tasks into bots, scripts, and APIs.</h3>
           </article>
@@ -236,14 +242,14 @@
       </section>
 
       <section id="contact" class="contact-section">
-        <div>
+        <div class="reveal">
           <p class="eyebrow">Available for Projects</p>
-          <h2>Let’s build something useful for your team or business.</h2>
+          <h2>Let's build something <span class="gradient-text">useful</span> for your team.</h2>
           <p>
             Reach out for websites, RAG apps, bots, automations, dashboards, and custom software development.
           </p>
         </div>
-        <div class="contact-card">
+        <div class="contact-card reveal">
           <a href="mailto:prathyushavarma31@gmail.com">prathyushavarma31@gmail.com</a>
           <a href="https://in.linkedin.com/in/sangani-prathyusha-336596220" target="_blank" rel="noreferrer">LinkedIn</a>
           <a href="https://github.com/prathyushasangani" target="_blank" rel="noreferrer">GitHub</a>
