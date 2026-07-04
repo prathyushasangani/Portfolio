@@ -23,57 +23,15 @@ if ("IntersectionObserver" in window && !reduceMotion) {
   revealEls.forEach((el) => el.classList.add("in"));
 }
 
-// ============ 3D tilt on cards ============
-const tiltEls = document.querySelectorAll("[data-tilt]");
-
-function applyTilt(el, rx, ry) {
-  el.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(0)`;
+// ============ Hero headline reveal on load ============
+const heroTitle = document.querySelector(".hero-title");
+if (heroTitle) {
+  requestAnimationFrame(() => heroTitle.classList.add("in"));
 }
 
-if (!reduceMotion) {
-  tiltEls.forEach((el) => {
-    let raf = 0;
-    let targetRx = 0;
-    let targetRy = 0;
-    let currentRx = 0;
-    let currentRy = 0;
-
-    const animate = () => {
-      currentRx += (targetRx - currentRx) * 0.15;
-      currentRy += (targetRy - currentRy) * 0.15;
-      applyTilt(el, currentRx, currentRy);
-      if (Math.abs(targetRx - currentRx) > 0.05 || Math.abs(targetRy - currentRy) > 0.05) {
-        raf = requestAnimationFrame(animate);
-      } else {
-        raf = 0;
-      }
-    };
-
-    el.addEventListener("pointermove", (e) => {
-      const rect = el.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width;
-      const y = (e.clientY - rect.top) / rect.height;
-      const max = 12;
-      targetRy = (x - 0.5) * max * 2;
-      targetRx = -(y - 0.5) * max * 2;
-      el.style.setProperty("--mx", `${x * 100}%`);
-      el.style.setProperty("--my", `${y * 100}%`);
-      el.classList.add("is-hover");
-      if (!raf) raf = requestAnimationFrame(animate);
-    });
-
-    el.addEventListener("pointerleave", () => {
-      targetRx = 0;
-      targetRy = 0;
-      el.classList.remove("is-hover");
-      if (!raf) raf = requestAnimationFrame(animate);
-    });
-  });
-}
-
-// ============ Cursor glow ============
+// ============ Custom cursor dot ============
 const cursor = document.querySelector(".cursor-glow");
-if (cursor && window.matchMedia("(hover: hover)").matches) {
+if (cursor && window.matchMedia("(hover: hover)").matches && !reduceMotion) {
   let cx = window.innerWidth / 2;
   let cy = window.innerHeight / 2;
   let tx = cx;
@@ -85,33 +43,22 @@ if (cursor && window.matchMedia("(hover: hover)").matches) {
   });
 
   const loop = () => {
-    cx += (tx - cx) * 0.12;
-    cy += (ty - cy) * 0.12;
+    cx += (tx - cx) * 0.25;
+    cy += (ty - cy) * 0.25;
     cursor.style.transform = `translate(${cx}px, ${cy}px) translate(-50%, -50%)`;
     requestAnimationFrame(loop);
   };
-  if (!reduceMotion) loop();
-}
+  loop();
 
-// ============ Parallax for orbs based on scroll ============
-const orbs = document.querySelectorAll(".orb");
-if (orbs.length && !reduceMotion) {
-  let ticking = false;
-  window.addEventListener(
-    "scroll",
-    () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          const y = window.scrollY;
-          orbs.forEach((orb, i) => {
-            const speed = (i + 1) * 0.08;
-            orb.style.translate = `0 ${y * speed * -0.3}px`;
-          });
-          ticking = false;
-        });
-        ticking = true;
-      }
-    },
-    { passive: true }
-  );
+  // Grow on interactive elements
+  document.querySelectorAll("a, button, .button").forEach((el) => {
+    el.addEventListener("pointerenter", () => {
+      cursor.style.width = "48px";
+      cursor.style.height = "48px";
+    });
+    el.addEventListener("pointerleave", () => {
+      cursor.style.width = "18px";
+      cursor.style.height = "18px";
+    });
+  });
 }
