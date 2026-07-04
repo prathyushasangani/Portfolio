@@ -583,35 +583,66 @@ h3 {
 
 .skill-row {
   display: grid;
-  grid-template-columns: minmax(180px, 240px) 1fr;
-  gap: clamp(20px, 4vw, 60px);
-  align-items: baseline;
+  grid-template-columns: minmax(160px, 210px) 1fr;
+  gap: clamp(20px, 4vw, 48px);
+  align-items: center;
   padding: 22px 0;
   border-bottom: 1px solid var(--line);
-  transition: background 0.3s ease, padding 0.3s ease;
+  transition: background 0.3s ease;
 }
 
 .skill-row:hover {
   background: linear-gradient(90deg, rgba(212, 255, 58, 0.04), transparent);
-  padding-inline: 16px;
 }
 
 .skill-cat {
   font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
   font-size: 0.82rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--accent);
+  align-self: start;
+  padding-top: 8px;
 }
 
-.skill-list {
-  font-size: clamp(1rem, 1.35vw, 1.2rem);
-  font-weight: 500;
-  line-height: 1.5;
-  color: var(--ink);
-  letter-spacing: -0.005em;
+/* Chip system — used in skills & project stacks */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 0.86rem;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.chip:hover {
+  transform: translateY(-1px);
+  border-color: rgba(212, 255, 58, 0.45);
+  background: rgba(212, 255, 58, 0.06);
+}
+
+.chip img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.chip.no-icon { padding-left: 14px; }
 
 .skill-panel {
   background: var(--bg);
@@ -753,10 +784,10 @@ h3 {
 /* New: inline stack line */
 .project-stack {
   display: grid;
-  grid-template-columns: minmax(60px, auto) 1fr;
+  grid-template-columns: minmax(96px, 130px) 1fr;
   gap: 20px;
-  align-items: baseline;
-  padding: 20px clamp(24px, 3vw, 36px);
+  align-items: start;
+  padding: 22px clamp(24px, 3vw, 36px);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
@@ -765,21 +796,10 @@ h3 {
   font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
   font-size: 0.74rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--accent);
-}
-
-.stack-list {
-  font-size: 0.95rem;
-  line-height: 1.55;
-  color: var(--ink-soft);
-  font-weight: 500;
-}
-
-.stack-list span:not(:last-child)::after {
-  content: " · ";
-  color: var(--muted);
+  padding-top: 10px;
 }
 
 .project-link {
