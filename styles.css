@@ -575,6 +575,44 @@ h3 {
   border-block: 1px solid var(--line);
 }
 
+/* Editorial skills table */
+.skills-table {
+  display: grid;
+  border-top: 1px solid var(--line);
+}
+
+.skill-row {
+  display: grid;
+  grid-template-columns: minmax(180px, 240px) 1fr;
+  gap: clamp(20px, 4vw, 60px);
+  align-items: baseline;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+  transition: background 0.3s ease, padding 0.3s ease;
+}
+
+.skill-row:hover {
+  background: linear-gradient(90deg, rgba(212, 255, 58, 0.04), transparent);
+  padding-inline: 16px;
+}
+
+.skill-cat {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.skill-list {
+  font-size: clamp(1rem, 1.35vw, 1.2rem);
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+}
+
 .skill-panel {
   background: var(--bg);
   padding: clamp(28px, 4vw, 48px);
@@ -675,10 +713,16 @@ h3 {
   border-bottom: 1px solid var(--line);
 }
 
-.project-card > div {
-  padding: clamp(24px, 3vw, 36px);
+.project-card > div:not(.project-stack) {
+  padding: clamp(22px, 2.6vw, 32px) clamp(24px, 3vw, 36px);
   display: grid;
-  gap: 14px;
+  gap: 12px;
+}
+
+.project-card p {
+  max-width: 62ch;
+  font-size: 0.98rem;
+  line-height: 1.6;
 }
 
 .project-type {
@@ -690,9 +734,9 @@ h3 {
 }
 
 .project-card h3 {
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-size: clamp(1.35rem, 2.2vw, 1.85rem);
   font-weight: 800;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.015em;
 }
 
 .project-card p:last-of-type,
@@ -704,21 +748,38 @@ h3 {
   border-bottom: 1px solid currentColor;
 }
 
-.project-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  padding: 0 clamp(24px, 3vw, 36px);
-  margin-bottom: clamp(20px, 2vw, 28px);
+.project-tags { display: none; }
+
+/* New: inline stack line */
+.project-stack {
+  display: grid;
+  grid-template-columns: minmax(60px, auto) 1fr;
+  gap: 20px;
+  align-items: baseline;
+  padding: 20px clamp(24px, 3vw, 36px);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
-.project-tags span {
-  padding: 6px 12px;
-  border-radius: 999px;
-  border: 1px solid var(--line);
-  background: var(--bg);
-  font-size: 0.84rem;
+.stack-label {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.stack-list {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
   font-weight: 500;
+}
+
+.stack-list span:not(:last-child)::after {
+  content: " · ";
+  color: var(--muted);
 }
 
 .project-link {
