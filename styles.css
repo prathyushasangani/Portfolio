@@ -1008,9 +1008,9 @@ h3 {
 /* ============ Footer ============ */
 footer {
   padding: 28px clamp(20px, 5vw, 64px);
-  background: var(--ink);
-  color: rgba(245, 245, 247, 0.5);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg);
+  color: var(--ink);
+  border-top: 1px solid var(--line);
   font-size: 0.88rem;
 }
 
