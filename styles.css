@@ -864,11 +864,12 @@ h3 {
 
 .contact-panel {
   position: relative;
-  padding: clamp(80px, 12vw, 140px) clamp(20px, 5vw, 80px);
+  padding: clamp(140px, 20vw, 240px) clamp(20px, 5vw, 80px) clamp(80px, 12vw, 140px);
   color: var(--ink);
   overflow: hidden;
   isolation: isolate;
   background: #d4ff3a;
+  clip-path: polygon(0 14%, 100% 0, 100% 100%, 0 100%);
 }
 
 .contact-wedge { display: none; }
